@@ -1,2 +1,2 @@
 # Ignorer le fichier de configuration
-config.php
+./config/config.php
