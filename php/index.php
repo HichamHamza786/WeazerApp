@@ -1,4 +1,6 @@
 <?php
+    require_once('./config/config.php');
+    
     $apiUrl = API_URL;
     $raw = file_get_contents($url);
     $json = json_decode($raw);
