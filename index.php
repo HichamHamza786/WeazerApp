@@ -8,7 +8,7 @@
         // Construction de l'URL de l'API
         $apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" . urlencode($city) . "&appid=" . urlencode(API_KEY);
         
-        // Requête API + obtenrion des données météo
+        // Requête API + obtention des données météo
         $raw = file_get_contents($apiUrl);
         $json = json_decode($raw);
         
@@ -20,8 +20,8 @@
             $weather = $json->weather[0]->main;
             $desc = $json->weather[0]->description;
             //* Températures
-            $temp = $json->main->temp;
-            $feel_like = $json->main->feels_like;
+            $temp = $json->main->temp - 273.15;
+            $feel_like = $json->main->feels_like - 273.15;
             //* Vent
             $speed = $json->wind->speed;
             $deg = $json->wind->deg;
@@ -35,7 +35,13 @@
             $deg = "";
         }
     } else {
-        
+        $name = "Erreur de connexion à l'API";
+        $weather = "";
+        $desc = "";
+        $temp = "";
+        $feel_like = "";
+        $speed = "";
+        $deg = "";
     }
 
 
@@ -139,8 +145,8 @@
 
             <div class="meteo_desc text-left">
                 <h2>
-                    <?php echo $temp; ?> °C / Ressenti <?php echo $feel_like; ?> °C <br />
-                    <?php echo $speed; ?> Km/h - <?php echo $deg; ?> ° <br />
+                    <?php echo round($temp); ?> °C / Ressenti <?php echo round($feel_like); ?> °C <br />
+                    <?php echo round($speed); ?> Km/h <br />
                 </h2>
             </div>
         </div>
