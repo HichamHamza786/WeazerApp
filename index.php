@@ -2,7 +2,7 @@
     require_once('./config/config.php');
     
     $apiUrl = API_URL;
-    $raw = file_get_contents($url);
+    $raw = file_get_contents($apiUrl);
     $json = json_decode($raw);
     $name = $json->name;
     
