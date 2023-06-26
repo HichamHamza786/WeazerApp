@@ -1,7 +1,7 @@
 <?php
     require_once('./config/config.php');
     
-    $apiUrl = API_URL;
+    $apiUrl = WEATHER_API_KEY;
     $raw = file_get_contents($apiUrl);
     $json = json_decode($raw);
     $name = $json->name;
