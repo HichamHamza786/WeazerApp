@@ -19,13 +19,23 @@ button {
     padding: 0.5em 1em;
     font-weight: bold;
 }
-.container h1 {
+
+.container header {
+    padding: 2em;
+}
+
+h1 {
+    color: white;
+    margin: 2em;
+}
+
+.container h2 {
     color: white;
     /*font-weight: lighter;*/
     /*text-transform: uppercase;*/
 }
 
-.meteo_desc h2 {
+.meteo_desc h3 {
     color: white;
     font-weight: lighter;
 }
