@@ -17,7 +17,6 @@
     // Vent
     $speed = $json->wind->speed;
     $deg = $json->wind->deg;
-    
 ?>
 
 <!DOCTYPE html>
