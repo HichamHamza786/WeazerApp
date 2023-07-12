@@ -1,11 +1,9 @@
 <?php
 
+namespace App\Controllers;
+
 class ErrorController
 {
-    // public function error401()
-    // {
-    //     $this->show("error401");
-    // }
 
     public function error404()
     {

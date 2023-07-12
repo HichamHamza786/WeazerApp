@@ -1,5 +1,7 @@
 <?php 
 
+namespace App\Controllers;
+
 class MainController {
     public function getWeather($city) {
         if (isset($_GET['city'])) {
@@ -7,7 +9,7 @@ class MainController {
     
             // Construction de l'URL des clés API
             $apiWeatherUrl = "https://api.openweathermap.org/data/2.5/weather?q=" . urlencode($city) . "&appid=" . urlencode(WEATHER_API_KEY);
-            
+            œ
             // Requête API + obtention des données météo
             $raw = file_get_contents($apiWeatherUrl);
             $json = json_decode($raw);
